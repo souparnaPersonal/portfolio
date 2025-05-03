@@ -15,17 +15,34 @@ const Experience = () => {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
               <div>
                 <h3 className="text-2xl font-semibold">Full Stack Developer</h3>
-                <p className="text-indigo-400">Tech Company A</p>
+                <p className="text-indigo-400">Nomatic Techworks</p>
                 <p className="text-sm text-gray-400">Remote</p>
               </div>
               <p className="text-sm text-gray-300 mt-2 sm:mt-0">
-                Jan 2023 – Present
+                Jan 2023 – December 2023
               </p>
             </div>
             <ul className="mt-4 list-disc pl-5 text-gray-300 space-y-1">
               <li>Developed and maintained scalable web applications.</li>
               <li>Led a team of 3 developers and conducted code reviews.</li>
               <li>Boosted performance by 30% via query optimization.</li>
+              <li>
+                Worked as a Full Stack Intern at Nomatic Techworks for ~11
+                months, contributing to the development of a board game demo
+                site called <strong>Stock Shock</strong>.
+              </li>
+              <li>
+                Designed interactive gameplay screens and implemented responsive
+                layouts using Material UI.
+              </li>
+              <li>
+                Gained hands-on experience with Microsoft Azure for deployment
+                and configuration tasks.
+              </li>
+              <li>
+                Explored React Native by making updates and minor changes in the
+                mobile app <strong>BookFish</strong>.
+              </li>
             </ul>
           </div>
 
@@ -34,19 +51,40 @@ const Experience = () => {
             <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center">
               <div>
                 <h3 className="text-2xl font-semibold">
-                  Frontend Developer Intern
+                  React Native Developer
                 </h3>
-                <p className="text-indigo-400">Startup B</p>
-                <p className="text-sm text-gray-400">Bangalore, India</p>
+                <p className="text-indigo-400">Arptix</p>
+                <p className="text-sm text-gray-400">Remote</p>
               </div>
               <p className="text-sm text-gray-300 mt-2 sm:mt-0">
-                Jul 2022 – Dec 2022
+                Jan 2024 – Present
               </p>
             </div>
             <ul className="mt-4 list-disc pl-5 text-gray-300 space-y-1">
-              <li>Built reusable React components and design systems.</li>
-              <li>Worked closely with backend developers to integrate APIs.</li>
-              <li>Delivered responsive, mobile-first UIs under deadlines.</li>
+              <li>
+                Working full-time on a React Native mobile app for the real
+                estate sector.
+              </li>
+              <li>
+                Implemented features for property buying, selling, and rental
+                listings.
+              </li>
+              <li>
+                Closely collaborated with designers and backend developers to
+                build and refine UI/UX.
+              </li>
+              <li>
+                Involved in integrating new business flows and improving app
+                architecture.
+              </li>
+              <li>
+                Enhanced and refactored existing screens for performance and
+                responsiveness.
+              </li>
+              <li>
+                Gained solid hands-on experience across frontend and backend
+                development.
+              </li>
             </ul>
           </div>
         </div>

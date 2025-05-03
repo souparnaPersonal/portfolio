@@ -2,19 +2,19 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { useRouter } from "next/navigation";
+import { usePathname, useRouter } from "next/navigation"; // Updated import
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const router = useRouter();
-  const currentPath = router.pathname;
+  const pathname = usePathname(); // Updated to use usePathname()
 
   const toggleMenu = () => setIsOpen(!isOpen);
 
   const handleLinkClick = (href: string) => {
-    if (currentPath !== "/") {
-      // If we are not on the home page, navigate to home with the hash
+    if (pathname !== "/") {
+      // If we are not on the home page, navigate to the given href
       router.push(`${href}`); // Navigate to /#about or /#contact
     } else {
       // If we are on the homepage, just scroll to the section
@@ -28,8 +28,8 @@ const Navbar = () => {
 
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/#about", label: "About" },
-    { href: "/#contact", label: "Contact" },
+    { href: pathname === "/" ? "#about" : "/#about", label: "About" },
+    { href: pathname === "/" ? "#contact" : "/#contact", label: "Contact" },
   ];
 
   return (
@@ -46,7 +46,7 @@ const Navbar = () => {
                 key={link.href}
                 onClick={() => handleLinkClick(link.href)}
                 className={`text-gray-700 hover:text-blue-600 transition  ${
-                  currentPath === link.href ? "font-semibold text-blue-600" : ""
+                  pathname === link.href ? "font-semibold text-blue-600" : ""
                 }`}
               >
                 {link.label}
@@ -72,7 +72,7 @@ const Navbar = () => {
               key={link.href}
               onClick={() => handleLinkClick(link.href)}
               className={`block text-gray-700 hover:text-blue-600 transition  ${
-                currentPath === link.href ? "font-semibold text-blue-600" : ""
+                pathname === link.href ? "font-semibold text-blue-600" : ""
               }`}
             >
               {link.label}
