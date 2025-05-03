@@ -2,14 +2,29 @@
 
 import { useState } from "react";
 import Link from "next/link";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const pathname = usePathname();
+  const router = useRouter();
+  const currentPath = router.pathname;
 
   const toggleMenu = () => setIsOpen(!isOpen);
+
+  const handleLinkClick = (href: string) => {
+    if (currentPath !== "/") {
+      // If we are not on the home page, navigate to home with the hash
+      router.push(`${href}`); // Navigate to /#about or /#contact
+    } else {
+      // If we are on the homepage, just scroll to the section
+      const section = document.querySelector(href);
+      if (section) {
+        section.scrollIntoView({ behavior: "smooth" });
+      }
+    }
+    setIsOpen(false); // Close mobile menu after clicking
+  };
 
   const navLinks = [
     { href: "/", label: "Home" },
@@ -27,15 +42,15 @@ const Navbar = () => {
 
           <div className="hidden md:flex space-x-6">
             {navLinks.map((link) => (
-              <Link
+              <button
                 key={link.href}
-                href={link.href}
-                className={`text-gray-700 hover:text-blue-600 transition ${
-                  pathname === link.href ? "font-semibold text-blue-600" : ""
+                onClick={() => handleLinkClick(link.href)}
+                className={`text-gray-700 hover:text-blue-600 transition  ${
+                  currentPath === link.href ? "font-semibold text-blue-600" : ""
                 }`}
               >
                 {link.label}
-              </Link>
+              </button>
             ))}
           </div>
 
@@ -52,17 +67,16 @@ const Navbar = () => {
 
       {isOpen && (
         <div className="md:hidden bg-white px-4 pb-4 space-y-2">
-          {filteredLinks.map((link) => (
-            <Link
+          {navLinks.map((link) => (
+            <button
               key={link.href}
-              href={link.href}
-              className={`block text-gray-700 hover:text-blue-600 transition ${
-                pathname === link.href ? "font-semibold text-blue-600" : ""
+              onClick={() => handleLinkClick(link.href)}
+              className={`block text-gray-700 hover:text-blue-600 transition  ${
+                currentPath === link.href ? "font-semibold text-blue-600" : ""
               }`}
-              onClick={() => setIsOpen(false)}
             >
               {link.label}
-            </Link>
+            </button>
           ))}
         </div>
       )}

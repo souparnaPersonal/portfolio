@@ -4,11 +4,35 @@
     "title": "TutorLink - Student-Tutor Platform",
     "description": "A full-stack platform to connect students with qualified tutors. Includes profiles, bookings, and payment integration.",
     "images": [
-      "/images/tutorlink1.png",
-      "/images/tutorlink2.png",
-      "/images/tutorlink3.png"
+      "/assets/tutorlink.png",
+      "/assets/tutorlink2.png",
+      "/assets/tutorlink3.png"
     ],
-    "url": "https://tutorlink.vercel.app",
+    "mainImage": "/assets/tutorlink.png",
+    "url": "https://tutor-link-two.vercel.app/",
+    "github": "https://github.com/yourusername/tutorlink",
+    "learned": [
+      "Building with Next.js App Router",
+      "Handling payments with Stripe",
+      "Implementing authentication using NextAuth"
+    ],
+    "challenges": [
+      "Managing state between booking and calendar",
+      "Integrating backend with Stripe securely",
+      "Making it responsive for all devices"
+    ]
+  },
+  {
+    "id": "book-store",
+    "title": "Book store",
+    "description": "A full-stack platform to connect students with qualified tutors. Includes profiles, bookings, and payment integration.",
+    "images": [
+      "/assets/bookstore.png",
+      "/assets/bookstore2.png",
+      "/assets/bookstore3.png"
+    ],
+    "mainImage": "/assets/bookstore.png",
+    "url": "https://book-shop-frontend-vert.vercel.app/",
     "github": "https://github.com/yourusername/tutorlink",
     "learned": [
       "Building with Next.js App Router",

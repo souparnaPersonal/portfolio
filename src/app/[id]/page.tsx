@@ -39,11 +39,12 @@ const ProjectDetail = () => {
         {project.images.map((img: string, index: number) => (
           <SwiperSlide key={index}>
             <Image
-              src={img}
               alt={`Screenshot ${index + 1}`}
+              // className="w-full h-80 object-cover rounded-xl"
+              width={1280}
+              height={720}
               className="w-full h-80 object-cover rounded-xl"
-              width={80}
-              height={80}
+              src={`${img}`}
             />
           </SwiperSlide>
         ))}

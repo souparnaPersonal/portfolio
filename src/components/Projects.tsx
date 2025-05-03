@@ -3,6 +3,7 @@
 
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const ProjectsSection = ({ projects }: { projects: any }) => {
   return (
@@ -15,11 +16,13 @@ const ProjectsSection = ({ projects }: { projects: any }) => {
           {projects.map((project: any) => (
             <div key={project.id} className="p-4 md:w-1/3 sm:w-1/2 w-full">
               <div className="bg-gray-800 p-6 rounded-lg">
-                {/* <img
-                  alt={project.title}
-                  className="w-full h-48 object-cover object-center mb-4 rounded"
-                  src={project.image}
-                /> */}
+                <Image
+                  src={`${project.mainImage}`}
+                  alt={""}
+                  width={80}
+                  height={80}
+                  className="w-full"
+                />
                 <h3 className="text-lg font-medium text-white">
                   {project.title}
                 </h3>
